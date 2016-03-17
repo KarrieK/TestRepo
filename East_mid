@@ -1,0 +1,10 @@
+
+import csv
+
+with open('/Users/karrie/Desktop/Ambulance FOI/East Midlands/EastMid.csv', 'rb') as inf, open('CleanMid.csv', 'wb') as outf:
+    csvreader = csv.DictReader(inf)
+    fieldnames = ['EastMid'] + csvreader.fieldnames  # add column name to beginning
+    csvwriter = csv.DictWriter(outf, fieldnames)
+    csvwriter.writeheader()
+    for node, row in enumerate(csvreader, 1):
+        csvwriter.writerow(dict(row, EastMid='EastMid %s' % EastMid))
