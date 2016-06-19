@@ -1,2 +1,2 @@
 # TestRepo
-Test repo
+Repo for practice scripts and code notes
